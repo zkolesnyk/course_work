@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Розклад занять
+{% endblock %}
+
+{% block content %}
+    <div align="center" class="container">
+        <h1 align="center">Розклад занять</h1>
+    {{ weekdays }}
+    <table class="table-responsive">
+        <caption>Перший тиждень</caption>
+        <th colspan="2"></th><th>Понеділок</th><th>Вівторок</th><th>Середа</th><th>Четвер</th><th>П'ятниця</th><th>Субота</th>
+        <tr>
+            <td>1</td><td>8:30<br>10:05</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 1 and pair.first_week == True %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>2</td><td>10:25<br>12:00</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 2 and pair.first_week == True %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>3</td><td>12:20<br>13:55</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 3 and pair.first_week == True %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>4</td><td>14:15<br>15:50</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 4 and pair.first_week == True %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>5</td><td>16:10<br>17:45</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 5 and pair.first_week == True %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+    </table>
+    <table class="table-bordered">
+        <caption>Другий тиждень</caption>
+        <th colspan="2"></th><th>Понеділок</th><th>Вівторок</th><th>Середа</th><th>Четвер</th><th>П'ятниця</th><th>Субота</th>
+        <tr>
+            <td>1</td><td>8:30<br>10:05</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 1 and pair.first_week == False %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>2</td><td>10:25<br>12:00</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 2 and pair.first_week == False %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>3</td><td>12:20<br>13:55</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 3 and pair.first_week == False %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>4</td><td>14:15<br>15:50</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 4 and pair.first_week == False %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <td>5</td><td>16:10<br>17:45</td>
+            {% for pair in pairs %}
+                {% if pair.number.number == 5 and pair.first_week == False %}
+                    {% if pair.subject != None and pair.lecturer != None %}
+                        <td>{{ pair.subject }}<br>{{ pair.lecturer }}</td>
+                    {% elif pair.subject != None and pair.lecturer == None  %}
+                        <td>{{ pair.subject }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+    </table>
+    </div>
+{% endblock %}

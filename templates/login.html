@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Log in
+{% endblock %}
+
+{% block login %}
+    <div>
+        <form class="form-signin" role="form" action="" method="post">
+            {% csrf_token %}
+            <h2 class="form-signin-heading">Будь-ласка, пройдіть авторизацію:</h2>
+                <input class="form-control" type="text" name="username" id="username" placeholder="Ім'я користувача">
+                <input class="form-control" type="password" name="password" id="password" placeholder="Пароль">
+            {% if login_error %}
+                    <label class="error" style="color: red">{{ login_error }}</label>
+            {% endif %}
+            <p></p>
+            <input class="btn btn-lg btn-primary btn-block"  type="submit" value="Увійти">
+            <a href="/auth/register">Регістрація</a>
+        </form>
+    </div>
+{% endblock %}

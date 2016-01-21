@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Навчальні матеріали
+{% endblock %}
+
+{% block content %}
+    <table border="1" colspan="2" width="100%">
+        <tr>
+            <th width="60%">File</td>
+            <th width="40%">Download</td>
+        </tr>
+        {% for material in materials %}
+            <tr>
+                <td width="60%">{{  material  }}</td>
+                <td width="40%" align="center"><a href="/media/{{  material.file  }}" style="text-decoration:None">Скачати</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

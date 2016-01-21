@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Список групи
+{% endblock %}
+
+{% block content %}
+    <div class="panel panel-default">
+    {% if students %}
+        <table class="table">
+        <th>#</th>
+        <th>Surname</th>
+        <th>Name</th>
+        <th>Birthdate</th>
+        <th>Phone number</th>
+        {% for student in students %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ student.surname }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.birthdate }}</td>
+                <td>{{ student.phone_number }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endif %}
+    </div>
+{% endblock %}
